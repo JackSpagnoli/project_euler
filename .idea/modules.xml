@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/problem027/problem027.iml" filepath="$PROJECT_DIR$/problem027/problem027.iml" />
+      <module fileurl="file://$PROJECT_DIR$/problem028/problem028.iml" filepath="$PROJECT_DIR$/problem028/problem028.iml" />
+      <module fileurl="file://$PROJECT_DIR$/problem029/problem029.iml" filepath="$PROJECT_DIR$/problem029/problem029.iml" />
+      <module fileurl="file://$PROJECT_DIR$/problem030/problem030.iml" filepath="$PROJECT_DIR$/problem030/problem030.iml" />
+      <module fileurl="file://$PROJECT_DIR$/problem031/problem031.iml" filepath="$PROJECT_DIR$/problem031/problem031.iml" />
+      <module fileurl="file://$PROJECT_DIR$/problem032/problem032.iml" filepath="$PROJECT_DIR$/problem032/problem032.iml" />
+      <module fileurl="file://$PROJECT_DIR$/problem033/problem033.iml" filepath="$PROJECT_DIR$/problem033/problem033.iml" />
+      <module fileurl="file://$PROJECT_DIR$/problem034/problem034.iml" filepath="$PROJECT_DIR$/problem034/problem034.iml" />
+      <module fileurl="file://$PROJECT_DIR$/problem035/problem035.iml" filepath="$PROJECT_DIR$/problem035/problem035.iml" />
+      <module fileurl="file://$PROJECT_DIR$/problem036/problem036.iml" filepath="$PROJECT_DIR$/problem036/problem036.iml" />
+      <module fileurl="file://$PROJECT_DIR$/problem037/problem037.iml" filepath="$PROJECT_DIR$/problem037/problem037.iml" />
+      <module fileurl="file://$PROJECT_DIR$/problem038/problem038.iml" filepath="$PROJECT_DIR$/problem038/problem038.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/project_euler.iml" filepath="$PROJECT_DIR$/.idea/project_euler.iml" />
+    </modules>
+  </component>
+</project>
