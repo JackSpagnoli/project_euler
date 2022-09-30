@@ -1,39 +1,40 @@
 fn main() {
-    let mut pentagonal_numbers:Vec<u128> = vec![1,5,12,22,35,51,70,92,117,145];
-    generate_pentagonals(&mut pentagonal_numbers, 500_000_000);
-    println!("Generated initial pentagonal numbers, {} found", pentagonal_numbers.len());
-    let mut d:u128 = 1_000_000_000;
-    let mut i:usize=0;
-    let max = pentagonal_numbers.len();
-    let limit = pentagonal_numbers[max-1] - pentagonal_numbers[max-2];
-    while i < max-2{
-        println!("i={}", i);
-        let mut j:usize = i+1;
-        while j < max-1 {
-            let diff = pentagonal_numbers[j] - pentagonal_numbers[i];
-            if diff < d {
-                if pentagonal_numbers.contains(&diff) {
-                    let sum = pentagonal_numbers[j] + pentagonal_numbers[i];
-                    generate_pentagonals(&mut pentagonal_numbers, sum);
-                    if pentagonal_numbers.contains(&sum) {
-                        d = diff;
-                        if limit > d {
-                            println!("Possible limit found.");
-                            j=max-2;
-                            i=max-3;
-                        }
-                    }
+    let mut total_valid_numbers: u128 = 0;
+    let mut i: u128 = 1;
+    let mut d = u128::MAX;
+
+    //Iterates over all (i,j) pairs with j<i, checking if each pair is a valid combination. If so, d is updated and the count of valid pairs is increased.
+    //All numbers are 2*P_n
+    while total_valid_numbers < 1 {
+        let twice_i_pentagonal = i * ((3 * i) - 1);
+        for j in 1..i {
+            let twice_j_pentagonal = j * ((3 * j) - 1);
+            if valid_pair(twice_i_pentagonal, twice_j_pentagonal) {
+                total_valid_numbers += 1;
+                println!("TVN: {}", total_valid_numbers);
+                if twice_i_pentagonal - twice_j_pentagonal < d {
+                    d = twice_i_pentagonal - twice_j_pentagonal;
                 }
             }
-            j+=1;
         }
-        i+=1;
+        i += 1;
     }
-    println!("{}", d);
+    println!("D: {}", d);
 }
-fn generate_pentagonals(pentagonal_numbers:&mut Vec<u128>, limit:u128){
-    while pentagonal_numbers[pentagonal_numbers.len()-1] < limit {
-        let n:u128 = pentagonal_numbers.len() as u128;
-        pentagonal_numbers.push((n*((3*n)-1))/2);
+
+//Checks if the passed number is 2*P_n for some n.
+fn is_pentagonal_number(twice_n: u128) -> bool {
+    let mut n: u128 = 1;
+    let mut pent: u128 = 2;
+    while pent <= twice_n {
+        if pent == twice_n { return true; }
+        n += 1;
+        pent = n * ((3 * n) - 1);
     }
+    return false;
+}
+
+//Checks if the sum and difference of the two passed numbers are pentagonal
+fn valid_pair(i_pent: u128, j_pent: u128) -> bool {
+    return if is_pentagonal_number(i_pent - j_pent) { is_pentagonal_number(i_pent + j_pent) } else { false };
 }
