@@ -26,6 +26,7 @@
       <module fileurl="file://$PROJECT_DIR$/problem048/problem048.iml" filepath="$PROJECT_DIR$/problem048/problem048.iml" />
       <module fileurl="file://$PROJECT_DIR$/problem049/problem049.iml" filepath="$PROJECT_DIR$/problem049/problem049.iml" />
       <module fileurl="file://$PROJECT_DIR$/problem050/problem050.iml" filepath="$PROJECT_DIR$/problem050/problem050.iml" />
+      <module fileurl="file://$PROJECT_DIR$/problem051/problem051.iml" filepath="$PROJECT_DIR$/problem051/problem051.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/project_euler.iml" filepath="$PROJECT_DIR$/.idea/project_euler.iml" />
     </modules>
   </component>
