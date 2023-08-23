@@ -1,5 +1,4 @@
 use std::fs;
-use std::mem::transmute;
 
 fn main() {
     let contents = fs::read_to_string("words.txt").unwrap();
