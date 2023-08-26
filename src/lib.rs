@@ -3,6 +3,7 @@
 pub mod number_utils;
 pub mod primes;
 
+pub mod problem050;
 pub mod problem051;
 pub mod problem052;
 pub mod problem053;
