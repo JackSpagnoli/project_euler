@@ -1,6 +1,7 @@
 use project_euler::*;
 
 fn main() {
+    assert_eq!(problem030::ans(), 443839);
     assert_eq!(problem031::ans(), 73682);
     // assert_eq!(problem033::ans(), 100);
     assert_eq!(problem034::ans(), 40730);
