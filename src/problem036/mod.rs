@@ -1,13 +1,11 @@
 pub fn ans() -> u128 {
     let mut sum: u128 = 0;
     for i in 1..1_000_000 {
-        if is_palindromic(i) {
-            if is_binary_palindromic(i) {
-                sum += i as u128;
-            }
+        if is_palindromic(i) && is_binary_palindromic(i) {
+            sum += i as u128;
         }
     }
-    return sum;
+    sum
 }
 
 fn is_palindromic(n: u32) -> bool {
@@ -20,7 +18,7 @@ fn is_palindromic(n: u32) -> bool {
             inverse_n *= 10;
         }
     }
-    return n == inverse_n;
+    n == inverse_n
 }
 
 fn is_binary_palindromic(n: u32) -> bool {
@@ -33,5 +31,5 @@ fn is_binary_palindromic(n: u32) -> bool {
             inverse_n *= 10;
         }
     }
-    return format!("{:b}", n).parse::<u128>().unwrap() == inverse_n;
+    format!("{:b}", n).parse::<u128>().unwrap() == inverse_n
 }

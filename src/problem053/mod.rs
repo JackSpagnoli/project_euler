@@ -3,7 +3,7 @@ pub fn ans() -> u128 {
 
     let vals: u128 = n_range.map(evaluate_n).sum();
 
-    return vals;
+    vals
 }
 fn evaluate_n(n: u128) -> u128 {
     let r_max = n / 2;
@@ -15,7 +15,7 @@ fn evaluate_n(n: u128) -> u128 {
             let ncr_r_minus_1 = ncr_greater_than_mill(n, *r - 1);
 
             if ncr_r && !ncr_r_minus_1 {
-                return std::cmp::Ordering::Equal;
+                std::cmp::Ordering::Equal
             } else if ncr_r {
                 return std::cmp::Ordering::Greater;
             } else {
@@ -24,7 +24,7 @@ fn evaluate_n(n: u128) -> u128 {
         })
         .unwrap() as u128;
 
-    return n - (2 * res) + 1;
+    n - (2 * res) + 1
 }
 
 fn ncr_greater_than_mill(n: u128, r: u128) -> bool {
@@ -39,5 +39,5 @@ fn ncr_greater_than_mill(n: u128, r: u128) -> bool {
             return false;
         }
     }
-    return true;
+    true
 }

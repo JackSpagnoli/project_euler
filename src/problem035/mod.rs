@@ -11,9 +11,9 @@ pub fn ans() -> u128 {
             let mut indexes = vec![i];
             while cycler != primes[i] {
                 let index = primes.binary_search(&cycler);
-                if index.is_ok() {
+                if let Ok(index) = index {
                     period += 1;
-                    indexes.push(index.unwrap());
+                    indexes.push(index);
                     cycler = cycle(cycler);
                 } else {
                     circular_prime = false;
@@ -29,7 +29,7 @@ pub fn ans() -> u128 {
         }
         i += 1;
     }
-    return circular_primes as u128;
+    circular_primes as u128
 }
 
 fn cycle(n: u32) -> u32 {
@@ -41,7 +41,7 @@ fn cycle(n: u32) -> u32 {
     while remainder > i {
         i *= 10;
     }
-    return ((i) * (last_digit as u32)) + remainder;
+    ((i) * (last_digit as u32)) + remainder
 }
 
 fn primes_under_million() -> [u32; 78498] {
@@ -67,5 +67,5 @@ fn primes_under_million() -> [u32; 78498] {
         }
         n += 2;
     }
-    return primes;
+    primes
 }

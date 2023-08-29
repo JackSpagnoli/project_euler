@@ -9,12 +9,12 @@ pub fn ans() -> u128 {
             while a <= c {
                 let mut b: u8 = 0;
                 while (10 * a) + b < (10 * c) + d {
-                    if b == c {
-                        if d > 0 {
-                            if a as u16 * (10 * c as u16 + d as u16) == d as u16 * (10 * a as u16 + b as u16) {
-                                fractions.push(((10 * a) + b, (10 * c) + d));
-                            }
-                        }
+                    if b == c
+                        && d > 0
+                        && a as u16 * (10 * c as u16 + d as u16)
+                            == d as u16 * (10 * a as u16 + b as u16)
+                    {
+                        fractions.push(((10 * a) + b, (10 * c) + d));
                     }
                     b += 1;
                 }
@@ -29,5 +29,5 @@ pub fn ans() -> u128 {
         println!("{} / {}", fraction.0, fraction.1);
     }
     //TODO return
-    return 0;
+    0
 }

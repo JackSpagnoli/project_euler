@@ -19,5 +19,5 @@ pub fn ans() -> u128 {
         }
         n+=1;
     }
-    return p as u128;
+    p as u128
 }

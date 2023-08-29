@@ -9,7 +9,7 @@ pub fn ans() -> u128 {
         n += 1;
     }
 
-    return sum;
+    sum
 }
 
 fn digit_pow_sum(n: u128) -> u128 {
@@ -20,9 +20,9 @@ fn digit_pow_sum(n: u128) -> u128 {
         sum += fifth_pow(digit);
         temp_n /= 10;
     }
-    return sum;
+    sum
 }
 
 fn fifth_pow(n: u128) -> u128 {
-    return n * n * n * n * n;
+    n * n * n * n * n
 }

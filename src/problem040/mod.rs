@@ -15,7 +15,7 @@ pub fn ans() -> u128 {
         digit += digits(n);
         n += 1;
     }
-    return product as u128
+    product as u128
 }
 
 fn digits(n: u64) -> u64 {
@@ -25,7 +25,7 @@ fn digits(n: u64) -> u64 {
         digits += 1;
         temp_n /= 10;
     }
-    return digits;
+    digits
 }
 
 fn power_of_ten(n: u64) -> bool {
@@ -34,5 +34,5 @@ fn power_of_ten(n: u64) -> bool {
         if temp_n % 10 > 0 { return false; }
         temp_n /= 10;
     }
-    return true;
+    true
 }

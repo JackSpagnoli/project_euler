@@ -1,11 +1,11 @@
 pub fn ans() -> u128 {
     let mut sum: u128 = 0;
-    for i in 3..25_000_000 as u128 {
+    for i in 3..25_000_000_u128 {
         if digit_factorial(get_digits(i)) == i {
             sum += i;
         }
     }
-    return sum;
+    sum
 }
 
 fn digit_factorial(digits: [u8; 10]) -> u128 {
@@ -19,15 +19,15 @@ fn digit_factorial(digits: [u8; 10]) -> u128 {
     factorial += 5040u128 * digits[7] as u128;
     factorial += 40320u128 * digits[8] as u128;
     factorial += 362880u128 * digits[9] as u128;
-    return factorial;
+    factorial
 }
 
 fn get_digits(n: u128) -> [u8; 10] {
-    let mut temp_n: u128 = n.clone();
+    let mut temp_n: u128 = n;
     let mut digits: [u8; 10] = [0; 10];
     while temp_n > 0 {
         digits[(temp_n % 10) as usize] += 1;
         temp_n /= 10;
     }
-    return digits;
+    digits
 }

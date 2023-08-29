@@ -42,5 +42,5 @@ pub fn ans() -> u128 {
             }
         }
     }
-    return combinations;
+    combinations
 }

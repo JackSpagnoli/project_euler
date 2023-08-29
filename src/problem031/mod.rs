@@ -1,5 +1,5 @@
 pub fn ans() -> u128 {
-    return find_combinations(200) as u128;
+    find_combinations(200) as u128
 }
 
 fn find_combinations(n: u32) -> u32 {
@@ -12,7 +12,7 @@ fn find_combinations(n: u32) -> u32 {
         temp -= coin_value;
     }
     combinations += find_combinations1(temp);
-    return combinations;
+    combinations
 }
 
 fn find_combinations1(n: u32) -> u32 {
@@ -25,7 +25,7 @@ fn find_combinations1(n: u32) -> u32 {
         temp -= coin_value;
     }
     combinations += find_combinations2(temp);
-    return combinations;
+    combinations
 }
 
 fn find_combinations2(n: u32) -> u32 {
@@ -38,7 +38,7 @@ fn find_combinations2(n: u32) -> u32 {
         temp -= coin_value;
     }
     combinations += find_combinations3(temp);
-    return combinations;
+    combinations
 }
 
 fn find_combinations3(n: u32) -> u32 {
@@ -51,7 +51,7 @@ fn find_combinations3(n: u32) -> u32 {
         temp -= coin_value;
     }
     combinations += find_combinations4(temp);
-    return combinations;
+    combinations
 }
 
 fn find_combinations4(n: u32) -> u32 {
@@ -64,7 +64,7 @@ fn find_combinations4(n: u32) -> u32 {
         temp -= coin_value;
     }
     combinations += find_combinations5(temp);
-    return combinations;
+    combinations
 }
 
 fn find_combinations5(n: u32) -> u32 {
@@ -77,7 +77,7 @@ fn find_combinations5(n: u32) -> u32 {
         temp -= coin_value;
     }
     combinations += find_combinations6(temp);
-    return combinations;
+    combinations
 }
 
 fn find_combinations6(n: u32) -> u32 {
@@ -90,5 +90,5 @@ fn find_combinations6(n: u32) -> u32 {
         temp -= coin_value;
     }
     combinations += 1;
-    return combinations;
+    combinations
 }

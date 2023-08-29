@@ -37,7 +37,7 @@ pub fn ans() -> u128{
                                 n += static_digits_copy % 10;
                                 static_digits_copy /= 10;
                             }
-                            return n;
+                            n
                         });
                     if is_prime(&mut primes, num) && num > (10u64).pow(digits - 1) {
                         number_of_primes += 1;

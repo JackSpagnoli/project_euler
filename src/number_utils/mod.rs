@@ -8,5 +8,5 @@ pub fn get_digits(n: u128) -> [u64; 10] {
         digits[(n_copy % 10) as usize] += 1;
         n_copy /= 10;
     }
-    return digits;
+    digits
 }

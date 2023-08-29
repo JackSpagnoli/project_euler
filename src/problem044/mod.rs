@@ -18,7 +18,7 @@ pub fn ans() -> u128{
         }
         i += 1;
     }
-    return d / 2;
+    d / 2
 }
 
 //Checks if the passed number is 2*P_n for some n.
@@ -30,10 +30,10 @@ fn is_pentagonal_number(twice_n: u128) -> bool {
         n += 1;
         pent = n * ((3 * n) - 1);
     }
-    return false;
+    false
 }
 
 //Checks if the sum and difference of the two passed numbers are pentagonal
 fn valid_pair(i_pent: u128, j_pent: u128) -> bool {
-    return if is_pentagonal_number(i_pent - j_pent) { is_pentagonal_number(i_pent + j_pent) } else { false };
+    if is_pentagonal_number(i_pent - j_pent) { is_pentagonal_number(i_pent + j_pent) } else { false }
 }

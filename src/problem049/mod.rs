@@ -6,25 +6,21 @@ pub fn ans() -> u128 {
     primes.reverse();
     for n in &primes {
         for k in 2..((9973 - n) / 2) {
-            if primes.contains(&(n + k)) {
-                if primes.contains(&(n + k + k)) {
-                    if permutation(n, &(n + k)) {
-                        if permutation(n, &(n + k + k)) {
-                            if permutation(&(n + k), &(n + k + k)) {
-                                if *n != 1487 {
-                                    let n_1: u128 = *n as u128;
-                                    let n_2: u128 = n_1 + k as u128;
-                                    let n_3: u128 = n_2 + k as u128;
-                                    return (1_0000_0000 * n_1) + (1_0000 * n_2) + n_3;
-                                }
-                            }
-                        }
-                    }
-                }
+            if primes.contains(&(n + k))
+                && primes.contains(&(n + k + k))
+                && permutation(n, &(n + k))
+                && permutation(n, &(n + k + k))
+                && permutation(&(n + k), &(n + k + k))
+                && *n != 1487
+            {
+                let n_1: u128 = *n as u128;
+                let n_2: u128 = n_1 + k as u128;
+                let n_3: u128 = n_2 + k as u128;
+                return (1_0000_0000 * n_1) + (1_0000 * n_2) + n_3;
             }
         }
     }
-    return 0;
+    0
 }
 
 fn generate_primes(primes: &mut Vec<u64>, n: u64) {
@@ -35,8 +31,7 @@ fn generate_primes(primes: &mut Vec<u64>, n: u64) {
             .map(|x| temp_n % x == 0)
             .filter(|x| *x)
             .collect::<Vec<bool>>()
-            .len()
-            == 0
+            .is_empty()
         {
             primes.push(temp_n);
         }
@@ -75,5 +70,5 @@ fn permutation(a: &u64, b: &u64) -> bool {
         return false;
     }
 
-    return true;
+    true
 }

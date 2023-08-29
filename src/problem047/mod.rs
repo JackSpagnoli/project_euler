@@ -1,4 +1,4 @@
-pub fn ans() -> u128{
+pub fn ans() -> u128 {
     let mut primes: Vec<u64> = vec![2, 3, 5, 7];
     let mut consecutives: u8 = 0;
     let mut n: u64 = 1;
@@ -11,10 +11,16 @@ pub fn ans() -> u128{
             while temp_n % primes[i] == 0 {
                 temp_n /= primes[i];
             }
-            if temp_n < pre_n { distinct_prime_factors += 1; }
+            if temp_n < pre_n {
+                distinct_prime_factors += 1;
+            }
             i += 1;
         }
-        if distinct_prime_factors == 4 { consecutives += 1; } else { consecutives = 0; }
+        if distinct_prime_factors == 4 {
+            consecutives += 1;
+        } else {
+            consecutives = 0;
+        }
         n += 1;
         generate_primes(&mut primes, n);
         while primes.contains(&n) && consecutives < 4 {
@@ -23,13 +29,21 @@ pub fn ans() -> u128{
             generate_primes(&mut primes, n);
         }
     }
-    return n as u128 - 4;
+    n as u128 - 4
 }
 
 fn generate_primes(primes: &mut Vec<u64>, n: u64) {
     let mut temp_n = primes[primes.len() - 1] + 2;
     while primes[primes.len() - 1] < n {
-        if primes.iter().map(|x| temp_n % x == 0).filter(|x| *x).collect::<Vec<bool>>().len() == 0 { primes.push(temp_n); }
+        if primes
+            .iter()
+            .map(|x| temp_n % x == 0)
+            .filter(|x| *x)
+            .collect::<Vec<bool>>()
+            .is_empty()
+        {
+            primes.push(temp_n);
+        }
         temp_n += 2;
     }
 }

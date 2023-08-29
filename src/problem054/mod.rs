@@ -8,7 +8,7 @@ use hand_rank::value_hand;
 use suit::*;
 
 pub fn ans() -> u128 {
-    return player_1_wins("resources/problem054/hands.txt");
+    player_1_wins("resources/problem054/hands.txt")
 }
 
 fn player_1_wins(file: &str) -> u128 {

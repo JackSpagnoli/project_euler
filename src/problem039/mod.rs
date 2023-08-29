@@ -24,11 +24,11 @@ pub fn ans() -> u128 {
         }
         p += 1;
     }
-    return max_p as u128;
+    max_p as u128
 }
 
 fn is_perfect_square(a: u32, b: u32, p: u32) -> bool {
     let c = p - a - b;
     if (a * a) + (b * b) != (c * c) { return false; }
-    return true;
+    true
 }

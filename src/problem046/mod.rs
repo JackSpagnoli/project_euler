@@ -1,10 +1,10 @@
 pub fn ans() -> u128 {
     let mut primes: Vec<u64> = vec![2, 3, 5, 7];
     let mut n: u64 = 33;
-    while can_be_written(&mut primes, n) && !is_prime(&mut primes, n) {
+    while can_be_written(&mut primes, n) && !is_prime(&primes, n) {
         n += 2;
     }
-    return n as u128;
+    n as u128
 }
 
 fn can_be_written(primes: &mut Vec<u64>, n: u64) -> bool {
@@ -23,7 +23,7 @@ fn can_be_written(primes: &mut Vec<u64>, n: u64) -> bool {
         }
         i += 1;
     }
-    return false;
+    false
 }
 
 fn generate_primes(primes: &mut Vec<u64>, n: u64) {
@@ -36,7 +36,7 @@ fn generate_primes(primes: &mut Vec<u64>, n: u64) {
     }
 }
 
-fn is_prime(primes: &mut Vec<u64>, n: u64) -> bool {
+fn is_prime(primes: &Vec<u64>, n: u64) -> bool {
     let mut i = 0;
     while i < primes.len() {
         if n % primes[i] == 0 {
@@ -44,5 +44,5 @@ fn is_prime(primes: &mut Vec<u64>, n: u64) -> bool {
         }
         i += 1;
     }
-    return true;
+    true
 }
