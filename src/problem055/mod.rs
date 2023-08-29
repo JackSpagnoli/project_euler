@@ -2,9 +2,7 @@ pub fn ans() -> u128 {
     let max_n = 10_000;
     let palindrome_sequence_length_map = generate_palindrome_sequence_length_map(max_n);
 
-    let lychrel_count = count_lychrel(palindrome_sequence_length_map);
-
-    return lychrel_count;
+    count_lychrel(palindrome_sequence_length_map)
 }
 
 fn count_lychrel(palindrome_sequence_length_map: Vec<(u128, Option<u128>)>) -> u128 {
@@ -58,11 +56,11 @@ fn generate_palindrome_sequence_length_map(max_n: u128) -> Vec<(u128, Option<u12
 }
 
 fn is_palindrome(n: u128) -> bool {
-    return n == reverse(n);
+    n == reverse(n)
 }
 
 fn reverse_sum(n: u128) -> u128 {
-    return n + reverse(n);
+    n + reverse(n)
 }
 
 fn reverse(n: u128) -> u128 {
@@ -74,7 +72,7 @@ fn reverse(n: u128) -> u128 {
         n /= 10;
     }
     rev_n += n % 10;
-    return rev_n;
+    rev_n
 }
 
 #[cfg(test)]

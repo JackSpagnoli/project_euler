@@ -106,8 +106,6 @@ pub fn value_hand(hand: Hand) -> HandRank {
 
     let match_pattern = calc_match_pattern(&hand);
 
-    // println!("match_pattern: {match_pattern:?}");
-
     let values: [usize; 5] = hand.map(|card| card.value);
     let reversed_values = values
         .iter()
