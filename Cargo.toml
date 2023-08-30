@@ -7,3 +7,4 @@ edition = "2021"
 
 [dependencies]
 num-integer = "0.1.45"
+fraction = { version = "0.13.1", features = ["with-dynaint"] }

@@ -29,4 +29,5 @@ fn main() {
     assert_eq!(problem054::ans(), 376);
     assert_eq!(problem055::ans(), 249);
     assert_eq!(problem056::ans(), 972);
+    assert_eq!(problem057::ans(), 153);
 }
