@@ -1,5 +1,3 @@
-use std::ops::{Index, IndexMut};
-
 pub struct Primes {
     primes: Vec<u128>,
     index: usize,
