@@ -1,15 +1,14 @@
-use self::spiral_corner_prime_ratio::PrimeRatio;
+use self::spiral_corner_prime_ratio::{PrimeRatio, Ratio};
 
 pub fn ans() -> u128 {
     PrimeRatio::default()
         .find(ratio_less_than_ten_percent)
         .unwrap()
-        .1 as u128
+        .side_length as u128
 }
 
-fn ratio_less_than_ten_percent(ratio_output: &((u128, u128), usize)) -> bool{
-    let ((numerator, denominator), _) = ratio_output;
-    denominator >= &(10 * numerator)
+fn ratio_less_than_ten_percent(ratio: &Ratio) -> bool {
+    ratio.denominator >= (10 * ratio.numerator)
 }
 
 mod spiral_corner_prime_ratio;

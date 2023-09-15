@@ -27,7 +27,8 @@ fn test_spiral_corner_prime_ratio() {
 
     let mut ratio = PrimeRatio::default();
 
-    cases
-        .iter()
-        .for_each(|expected| assert_eq!(ratio.next().unwrap().0, *expected));
+    cases.iter().for_each(|expected| {
+        let next = ratio.next().unwrap();
+        assert_eq!((next.numerator, next.denominator), *expected)
+    });
 }

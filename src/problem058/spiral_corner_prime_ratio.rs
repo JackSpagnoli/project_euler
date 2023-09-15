@@ -9,8 +9,14 @@ pub struct PrimeRatio {
     denominator: u128,
 }
 
+pub struct Ratio {
+    pub numerator: u128,
+    pub denominator: u128,
+    pub side_length: usize,
+}
+
 impl Iterator for PrimeRatio {
-    type Item = ((u128, u128), usize);
+    type Item = Ratio;
 
     fn next(&mut self) -> Option<Self::Item> {
         if let Some(corners) = self.spiral_corners.next() {
@@ -19,10 +25,11 @@ impl Iterator for PrimeRatio {
                 .filter(|n| self.primes.is_prime(**n as u128))
                 .count() as u128;
             self.denominator += 4;
-            Some((
-                (self.numerator, self.denominator),
-                self.spiral_corners.side_length(),
-            ))
+            Some(Ratio {
+                numerator: self.numerator,
+                denominator: self.denominator,
+                side_length: self.spiral_corners.side_length(),
+            })
         } else {
             None
         }
