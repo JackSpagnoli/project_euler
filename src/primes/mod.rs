@@ -7,6 +7,7 @@ impl Primes {
     pub fn reset(self) -> Self {
         Primes { index: 0, ..self }
     }
+    
     pub fn is_prime(&mut self, n: u128) -> bool {
         while self.has_enough_primes(n) {
             self.generate_next_prime();
