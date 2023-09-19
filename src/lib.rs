@@ -31,6 +31,7 @@ macro_rules! define_problem {
 
 pub mod number_utils;
 pub mod primes;
+pub mod permutations;
 
 pub mod problem027;
 pub mod problem029;
