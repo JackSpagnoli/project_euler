@@ -1,23 +1,24 @@
-use super::is_pandigital;
+use super::{largest_pandigital_prime, number_from_digits};
 
 #[test]
-fn test_is_pandigital() {
+fn test_largest_pandigital_prime() {
+    let cases = [(4, 4231)];
+
+    cases
+        .iter()
+        .for_each(|(digits, expected)| assert_eq!(largest_pandigital_prime(*digits), *expected))
+}
+
+#[test]
+fn test_number_from_digits() {
     let cases = [
-        (0, false),
-        (1, true),
-        (2143, true),
-        (2243, false),
-        (21, true),
-        (12, true),
-        (13, false),
-        (31, false),
-        (401, false),
-        (102, false),
-        (999994321, false)
+        (vec![1], 1),
+        (vec![1, 2], 12),
+        (vec![1, 2, 3], 123),
+        (vec![3, 2, 1], 321),
     ];
 
-    cases.iter().for_each(|(n, expected)| {
-        println!("n:{n}");
-        assert_eq!(is_pandigital(n), *expected)
-    });
+    cases
+        .iter()
+        .for_each(|(digits, expected)| assert_eq!(number_from_digits(digits.to_vec()), *expected))
 }
