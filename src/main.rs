@@ -34,7 +34,7 @@ fn main() {
         define_problem!(problem056, 972),
         define_problem!(problem057, 153),
         define_problem!(problem058, 26241),
-        define_problem!(problem425, 0),
+        define_problem!(problem112, 1587000),
     ];
 
     problems.iter().for_each(check_problem)
