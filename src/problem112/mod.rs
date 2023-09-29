@@ -12,7 +12,7 @@ fn find_bouncy_number_percentage(k: u128) -> u128 {
 }
 
 mod bouncy_number_fraction;
-mod utils;
+pub mod utils;
 
 #[cfg(test)]
 mod tests;
